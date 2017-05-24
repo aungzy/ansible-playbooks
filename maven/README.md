@@ -8,5 +8,5 @@
 ## Running playbook
 
 ```bash
-ansible-playbook all -i hosts site.yml
+ansible-playbook -i hosts site.yml
 ```

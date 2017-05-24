@@ -4,5 +4,5 @@ My collection of useful ansible playbooks.
 
 ## Playbooks
 
-- [maven] (./maven/README.md)
+- [maven](./maven)
 
