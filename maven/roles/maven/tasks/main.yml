@@ -1,0 +1,24 @@
+---
+- name: Download maven binary
+  get_url:
+    url: "http://www-us.apache.org/dist/maven/maven-3/{{ maven_version }}/binaries/{{ maven_archive_filename }}"
+    dest: "/opt/{{ maven_archive_filename }}"
+
+- name: Unarchive maven binary
+  unarchive:
+    src: "/opt/{{ maven_archive_filename }}"
+    dest: '/opt/'
+
+- name: Create symlink
+  file:
+    src: "/opt/{{ maven_archive_name }}/bin/mvn"
+    dest: /usr/local/bin/mvn
+    state: link
+
+- name: Test mvn command by checking version
+  command: /usr/local/bin/mvn -v
+
+- name: Remove archive file
+  file:
+    path: "/opt/{{ maven_archive_filename }}"
+    state: absent

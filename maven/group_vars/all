@@ -1,0 +1,8 @@
+
+# JDK version
+jdk_version: 1.8.0
+
+# Maven version
+maven_version: 3.5.0
+maven_archive_name: "apache-maven-{{ maven_version }}"
+maven_archive_filename: "{{ maven_archive_name }}-bin.tar.gz"
