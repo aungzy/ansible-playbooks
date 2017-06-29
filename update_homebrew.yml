@@ -1,0 +1,16 @@
+---
+
+- hosts: local
+
+  tasks:
+  - name: Update Homebrew
+    homebrew:
+      update_homebrew: yes
+      upgrade_all: yes
+
+  - name: Clean up Homebrew
+    command: brew cleanup
+
+  - name: Clean up Homebrew Cask
+    command: brew cask cleanup
+
